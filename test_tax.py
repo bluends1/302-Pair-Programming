@@ -81,3 +81,23 @@ class testtax(unittest.TestCase):
     def test_tax20(self):
         r = tax.cal(2, [208734, 326526])[-1]
         self.assertEqual(r, 14925)
+
+    def test_tax21(self):
+        r = tax.cal(2, [10000000000000000, 50000000000000000])[-1]
+        self.assertEqual(r, 8999999999994600)
+
+    def test_tax22(self):
+        r = tax.cal(2, [10000000000000000, 200000])[-1]
+        self.assertEqual(r, 1500000000024600)
+
+    def test_tax23(self):
+        r = tax.cal(2, [0, 700])[-1]
+        self.assertEqual(r, 0)
+
+    def test_tax24(self):
+        r = tax.cal(2, [1000, 200000])[-1]
+        self.assertEqual(r, 0)
+
+    def test_tax25(self):
+        r = tax.cal(2, [10000000000000000, 1000])[-1]
+        self.assertEqual(r, 1499999999994750)
